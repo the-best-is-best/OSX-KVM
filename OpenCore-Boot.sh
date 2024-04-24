@@ -62,7 +62,8 @@ args=(
   -netdev user,id=net0,hostfwd=tcp::2222-:22 -device virtio-net-pci,netdev=net0,id=net0,mac=52:54:00:c9:18:27
   # -netdev user,id=net0 -device vmxnet3,netdev=net0,id=net0,mac=52:54:00:c9:18:27  # Note: Use this line for High Sierra
   -monitor stdio
-  -device vmware-svga
+  # -device VGA,vgamem_mb=128
+  -device virtio-vga
   # -spice port=5900,addr=127.0.0.1,disable-ticketing=on
 )
 

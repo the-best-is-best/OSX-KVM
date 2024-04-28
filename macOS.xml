@@ -34,7 +34,7 @@
 	give the clock a tsc timer for kvm to pass to the guest.
 	See comments on the <kvm> and <clock> attributes.
 -->
-  <name>macOS</name>
+  <name>macOS-By-Me</name>
   <uuid>2aca0dd6-cec9-4717-9ab2-0b7b13d111c3</uuid>
   <title>macOS</title>
   <memory unit='KiB'>4194304</memory>
@@ -82,14 +82,7 @@
       <address type="drive" controller="0" bus="0" target="0" unit="2"/>
     </disk>
         
-        <!--me -->
-        <input type='mouse' bus='usb'>
-		<address type='usb' bus='1' port='1'/>
-	</input>
-	<input type='keyboard' bus='usb'>
-		<address type='usb' bus='1' port='2'/>
-	</input>
-      <!--me -->
+     
       
     <controller type='sata' index='0'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x1f' function='0x2'/>
@@ -149,12 +142,6 @@
       <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x2'/>
     </controller>
   
-    <!-- me -->
-      <controller type='usb' index='1' model='qemu-xhci'>
-      <address type='pci' domain='0x0000' bus='0x03' slot='0x00' function='0x0'/>
-    </controller>
-    <!--me -->
-    
     <!-- Make sure you put your nic in bus 0x0 and slot 0x0y(y is numeric), this will make nic built-in and apple-store work-->
     <interface type="bridge">
       <mac address="52:54:00:e6:85:40"/>

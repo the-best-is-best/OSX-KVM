@@ -23,7 +23,7 @@ MY_OPTIONS="+ssse3,+sse4.2,+popcnt,+avx,+aes,+xsave,+xsaveopt,check"
 # This script works for Big Sur, Catalina, Mojave, and High Sierra. Tested with
 # macOS 10.15.6, macOS 10.14.6, and macOS 10.13.6.
 
-ALLOCATED_RAM="16000" # MiB
+ALLOCATED_RAM="21000" # MiB
 CPU_SOCKETS="1"
 CPU_CORES="8"
 CPU_THREADS="16"
@@ -62,8 +62,8 @@ args=(
   -netdev user,id=net0,hostfwd=tcp::2222-:22 -device virtio-net-pci,netdev=net0,id=net0,mac=52:54:00:c9:18:27
   # -netdev user,id=net0 -device vmxnet3,netdev=net0,id=net0,mac=52:54:00:c9:18:27  # Note: Use this line for High Sierra
   -monitor stdio
-  # -device VGA,vgamem_mb=128
-  -device virtio-vga
+   #-device vmware-svga
+   -device virtio-vga
   # -spice port=5900,addr=127.0.0.1,disable-ticketing=on
 )
 
